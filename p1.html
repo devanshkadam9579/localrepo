@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Monastery360: Explore Sikkim's Living Heritage</title>
+    <meta name="description" content="Digital heritage platform showcasing monasteries of Sikkim for tourism and cultural preservation. Explore 360° virtual tours, audio guides, and sacred archives." />
+    <meta name="author" content="Monastery360" />
+    <meta name="keywords" content="Sikkim, monasteries, Buddhism, heritage, virtual tours, cultural preservation" />
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#c17817" />
+    
+    <!-- Apple PWA Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Monastery360" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Monastery360: Explore Sikkim's Living Heritage" />
+    <meta property="og:description" content="Digital heritage platform showcasing monasteries of Sikkim for tourism and cultural preservation" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://monastery360.app/images/hero-og.jpg" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Monastery360: Explore Sikkim's Living Heritage" />
+    <meta name="twitter:description" content="Digital heritage platform showcasing monasteries of Sikkim" />
+    <meta name="twitter:image" content="https://monastery360.app/images/hero-og.jpg" />
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- PWA Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then((registration) => {
+              console.log('SW registered: ', registration);
+            })
+            .catch((registrationError) => {
+              console.log('SW registration failed: ', registrationError);
+            });
+        });
+      }
+    </script>
+  </body>
+</html>
